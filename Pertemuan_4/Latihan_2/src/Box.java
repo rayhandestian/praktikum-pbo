@@ -17,7 +17,7 @@ public class Box {
 
     // Constructor no parameter
     public Box() {
-        width = height = depth;
+        width = height = depth = -1;
     }
 
     // Menghitung volume

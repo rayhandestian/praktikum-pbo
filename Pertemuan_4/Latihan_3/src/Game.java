@@ -3,16 +3,16 @@ public class Game {
         Player player1 = new Player("Player1", 100, 1);
         Player player2 = new Player("Player2", 100, 1);
 
-        Weapon sword = new Weapon("Sword", 10);
+        Weapon sword = new Weapon("Blade Of Storm", 10);
         Armor plateArmor = new Armor("Plate Armor", 5);
 
-        Weapon axe = new Weapon("Axe", 15);
+        Weapon bow = new Weapon("Death Song", 15);
         Armor leatherArmor = new Armor("Leather Armor", 3);
 
         player1.equipWeapon(sword);
         player1.equipArmor(plateArmor);
 
-        player2.equipWeapon(axe);
+        player2.equipWeapon(bow);
         player2.equipArmor(leatherArmor);
 
         // Round 1
