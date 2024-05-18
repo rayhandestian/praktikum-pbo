@@ -5,6 +5,9 @@ public class Player {
     private int maxHealth;
     private int attack;
     private int coins;
+    private int regionVentured;
+    private Item weapon;
+    private Item armor;
     private Inventory inventory;
 
     public Player() {
@@ -12,6 +15,9 @@ public class Player {
         this.maxHealth = 100;
         this.attack = 10;
         this.coins = 15;
+        this.regionVentured = 0;
+        this.weapon = null;
+        this.armor = null;
         this.inventory = new Inventory();
     }
 
@@ -52,6 +58,14 @@ public class Player {
     public void addCoins(int amount) {
         System.out.println("[You found " + amount + " coins!]");
         coins += amount;
+    }
+
+    public int getRegionVentured() {
+        return regionVentured;
+    }
+
+    public void addRegionVentured() {
+        regionVentured++;
     }
 
     public Inventory getInventory() {

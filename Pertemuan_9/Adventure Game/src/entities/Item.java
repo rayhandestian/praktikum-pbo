@@ -4,11 +4,16 @@ public class Item {
     protected String name;
     protected String description;
     protected String type;
+    protected String stats;
 
-    public Item(String name, String description, String type) {
+    protected int value;
+
+    public Item(String name, String description, String type, String stats, int value) {
         this.name = name;
         this.description = description;
         this.type = type;
+        this.stats = stats;
+        this.value = value;
     }
 
     public String getName() {
@@ -21,6 +26,14 @@ public class Item {
 
     public String getType() {
         return type;
+    }
+
+    public String getStats() {
+        return stats;
+    }
+
+    public int getValue() {
+        return value;
     }
 
     public void use(Player player) {

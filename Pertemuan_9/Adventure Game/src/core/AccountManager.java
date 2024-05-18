@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class AccountManager {
-    private Map<String, String> accounts;
+    private final Map<String, String> accounts;
 
     public AccountManager() {
         accounts = FileHandler.loadUserData();

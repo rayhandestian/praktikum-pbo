@@ -27,15 +27,28 @@ public class Inventory {
         return items;
     }
 
-//    public void useItem(Item item, Player player) {
-//        if (items.contains(item)) {
-//            item.use(player);
-//            if (item.getType().equals("addHealth")) {
-//                player.setHealth(player.getHealth() + item.getValue());
-//                items.remove(item);
-//            }
-//        }
-//    }
+    public void useItem(Item item, Player player) {
+        if (items.contains(item)) {
+            item.use(player);
+            if (item.getType().equals("consumable")) {
+                if (item.getStats().equals("add health")) {
+                    player.setHealth(player.getHealth() + item.getValue());
+                    if (player.getHealth() > player.getMaxHealth()) {
+                        player.setHealth(player.getMaxHealth());
+                    }
+                } else if (item.getStats().equals("add max health")) {
+                    player.increaseMaxHealth(item.getValue());
+                }
+                player.setHealth(player.getHealth() + item.getValue());
+                items.remove(item);
+            }
+            else if (item.getType().equals("weapon")) {
+                if (item.getStats().equals("add attack")) {
+                    player.setAttack(player.getAttack() + item.getValue());
+                }
+            }
+        }
+    }
 
     public int size() {
         return items.size();

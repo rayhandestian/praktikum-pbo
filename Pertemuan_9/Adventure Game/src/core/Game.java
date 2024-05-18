@@ -95,7 +95,7 @@ public class Game {
             if (!isRunning) {
                 return;
             }
-            System.out.println("Venture:");
+            System.out.println("\nRegions Ventured: " + player.getRegionVentured() + "\nVenture:");
             System.out.println("1. Go North");
             System.out.println("2. Go East");
             System.out.println("3. Go South");
@@ -108,6 +108,7 @@ public class Game {
 
             switch (choice) {
                 case 1: case 2: case 3: case 4:
+                    player.addRegionVentured();
                     encounter(scanner);
                     break;
                 case 5:
@@ -118,7 +119,7 @@ public class Game {
     }
 
     private void encounter(Scanner scanner) {
-        if (Randomizer.chance(0.5)) {
+        if (Randomizer.chance(0.4)) {
             System.out.println("You've encountered an enemy!");
             Enemy enemy;
             if (Randomizer.chance(0.7)) {
