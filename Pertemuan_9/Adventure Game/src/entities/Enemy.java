@@ -1,18 +1,24 @@
 package entities;
 
-public class Enemy {
+public abstract class Enemy {
+    private final String id;
     private final String name;
     private int health;
     private final int maxHealth;
     private final int damage;
     private final int experience;
 
-    public Enemy(String name, int health, int damage, int experience) {
+    public Enemy(String id, String name, int health, int damage, int experience) {
+        this.id = "id";
         this.name = name;
         this.health = health;
         this.maxHealth = health;
         this.damage = damage;
         this.experience = experience;
+    }
+
+    public String getId() {
+        return id;
     }
 
     public String getName() {
@@ -31,6 +37,7 @@ public class Enemy {
         return damage;
     }
 
+    // idk if i need these
 //    public void setHealth(int health) {
 //        this.health = health;
 //    }

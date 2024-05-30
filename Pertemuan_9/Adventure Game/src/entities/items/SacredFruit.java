@@ -4,6 +4,6 @@ import entities.Item;
 
 public class SacredFruit extends Item {
     public SacredFruit() {
-        super("Sacred Fruit", "Increases max health by 7 permanently.", "consumable", "add max health", 7);
+        super("sacred_fruit", "Sacred Fruit", "Increases max health by 20 permanently.", "consumable", "add max health", 20);
     }
 }

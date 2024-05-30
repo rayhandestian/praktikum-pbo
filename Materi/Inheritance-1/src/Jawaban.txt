@@ -1,0 +1,5 @@
+1. Jelaskan pengaruh keyword super dalam inheritance.
+Keyword super digunakan untuk merujuk ke metode atau constructor dari parent class, untuk mengakses ke metode atau constructor tersebut yang telah di-override atau untuk inisialisasi object parent class.
+
+2. Jelaskan apakah terdapat perubahan di data parent jika nilai parent di ubah di child.
+Perubahan pada data di parent class tidak akan terjadi, karena setiap object punya 'salinan' instance variabelnya sendiri, kecuali jika variabel yang diubah adalah variabel class (static) yang dibagi antara semua instance.

@@ -5,10 +5,12 @@ import java.util.List;
 
 public class Inventory {
     private List<Item> items;
-    private static final int MAX_CAPACITY = 16;
+    private static final int MAX_CAPACITY = 10;
+    private Player player;
 
-    public Inventory() {
+    public Inventory(Player player) {
         this.items = new ArrayList<>();
+        this.player = player;
     }
 
     public boolean addItem(Item item) {
@@ -20,34 +22,14 @@ public class Inventory {
     }
 
     public boolean removeItem(Item item) {
-        return items.remove(item);
+        if (items.remove(item)) {
+            return true;
+        }
+        return false;
     }
 
     public List<Item> getItems() {
         return items;
-    }
-
-    public void useItem(Item item, Player player) {
-        if (items.contains(item)) {
-            item.use(player);
-            if (item.getType().equals("consumable")) {
-                if (item.getStats().equals("add health")) {
-                    player.setHealth(player.getHealth() + item.getValue());
-                    if (player.getHealth() > player.getMaxHealth()) {
-                        player.setHealth(player.getMaxHealth());
-                    }
-                } else if (item.getStats().equals("add max health")) {
-                    player.increaseMaxHealth(item.getValue());
-                }
-                player.setHealth(player.getHealth() + item.getValue());
-                items.remove(item);
-            }
-            else if (item.getType().equals("weapon")) {
-                if (item.getStats().equals("add attack")) {
-                    player.setAttack(player.getAttack() + item.getValue());
-                }
-            }
-        }
     }
 
     public int size() {

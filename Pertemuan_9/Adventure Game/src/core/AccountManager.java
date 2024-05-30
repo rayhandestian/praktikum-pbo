@@ -38,7 +38,7 @@ public class AccountManager {
         while (true) {
             System.out.println("Choose an option: (1) Register (2) Login (3) Exit");
             int choice = scanner.nextInt();
-            scanner.nextLine();  // Consume newline left-over
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:

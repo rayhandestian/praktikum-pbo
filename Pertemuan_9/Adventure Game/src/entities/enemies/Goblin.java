@@ -4,6 +4,6 @@ import entities.Enemy;
 
 public class Goblin extends Enemy {
     public Goblin() {
-        super("Goblin", 40, 10, 6);
+        super("goblin", "Goblin", 40, 10, 6);
     }
 }

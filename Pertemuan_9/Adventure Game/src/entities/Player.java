@@ -1,24 +1,29 @@
 package entities;
+import core.AccountManager;
 
 public class Player {
+    private String username;
     private int health;
     private int maxHealth;
     private int attack;
-    private int coins;
     private int regionVentured;
-    private Item weapon;
-    private Item armor;
     private Inventory inventory;
 
-    public Player() {
+    public Player(String username) {
+        this.username = username;
         this.health = 100;
         this.maxHealth = 100;
         this.attack = 10;
-        this.coins = 15;
         this.regionVentured = 0;
-        this.weapon = null;
-        this.armor = null;
-        this.inventory = new Inventory();
+        this.inventory = new Inventory(this);
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public int getHealth() {
@@ -51,21 +56,16 @@ public class Player {
         System.out.println("[Attack power increased by " + amount + ". Now: " + attack + "]");
     }
 
-    public int getCoins() {
-        return coins;
-    }
-
-    public void addCoins(int amount) {
-        System.out.println("[You found " + amount + " coins!]");
-        coins += amount;
-    }
-
     public int getRegionVentured() {
         return regionVentured;
     }
 
     public void addRegionVentured() {
         regionVentured++;
+    }
+
+    public void setRegionVentured(int regionVentured) {
+        this.regionVentured = regionVentured;
     }
 
     public Inventory getInventory() {
